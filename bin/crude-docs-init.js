@@ -5,7 +5,7 @@ const shell = require('shelljs');
 const chalk = require('chalk');
 const pg = require('commander');
 
-pg.version('0.0.1', '-v, --version');
+pg.version('0.1.0', '-v, --version');
 
 pg
   .command('*')

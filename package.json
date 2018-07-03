@@ -10,8 +10,11 @@
     "type": "git",
     "url": "git+https://github.com/flowke/crude-docs-init.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "docs init",
+    "crude docs"
+  ],
+  "author": "Flowke",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/flowke/crude-docs-init/issues"
