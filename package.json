@@ -1,0 +1,26 @@
+{
+  "name": "crude-docs-init",
+  "version": "0.1.0",
+  "description": "用于初始化 crude-docs 项目",
+  "main": "index.js",
+  "bin": {
+    "crude-docs-init": "bin/crude-docs-init.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flowke/crude-docs-init.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/flowke/crude-docs-init/issues"
+  },
+  "homepage": "https://github.com/flowke/crude-docs-init#readme",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.16.0",
+    "fs-extra": "^6.0.1",
+    "shelljs": "^0.8.2"
+  }
+}

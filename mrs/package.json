@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start": "crude start",
+    "build": "crude build"
+  }
+}
