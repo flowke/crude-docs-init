@@ -8,7 +8,7 @@ const pg = require('commander');
 pg.version('0.1.0', '-v, --version');
 
 pg
-  .command('*')
+  .command('* <dir>')
   .description('创建项目')
   .action(create);
 
@@ -72,7 +72,7 @@ function create(dir){
 
   try{
 
-    fse.copySync(path.resolve(__dirname, '../example'), '.');
+    fse.copySync(path.resolve(__dirname, '../fileTpl'), '.');
 
     console.log( chalk.green('创建成功') );
   }catch(e){
