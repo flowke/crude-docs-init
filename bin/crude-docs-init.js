@@ -5,6 +5,11 @@ const shell = require('shelljs');
 const chalk = require('chalk');
 const pg = require('commander');
 
+let hasYarn = false;
+if(shell.which('yarn')){
+  hasYarn = true;
+}
+
 pg.version('0.1.0', '-v, --version');
 
 pg
@@ -41,10 +46,7 @@ function create(dir){
     process.exit(1);
   }
 
-  let hasYarn = false;
-  if(shell.which('yarn')){
-    hasYarn = true;
-  }
+
 
   shell.mkdir(dir);
 
@@ -54,7 +56,8 @@ function create(dir){
 
   const packageJSON = { scripts: {
     start: 'crude start',
-    build: 'crude build'
+    build: 'crude build',
+    preview: 'crude preview',
   } };
 
   fse.writeFileSync(
@@ -63,19 +66,28 @@ function create(dir){
   );
 
   shell.cd(dir);
-
-  if (hasYarn) {
-    shell.exec("yarn add crude-docs --dev");
-  } else {
-    shell.exec("npm install crude-docs --save-dev");
-  }
+  installDev('serve');
 
   try{
 
     fse.copySync(path.resolve(__dirname, '../fileTpl'), '.');
 
     console.log( chalk.green('创建成功') );
+
+    console.log(chalk.green('您可以使用如下命令并开始工作:'));
+    console.log(chalk.yellow(`  cd ${dir}`));
+    console.log(chalk.yellow(`  crude start`));
+
   }catch(e){
     console.log( chalk.red('创建失败!') );
+  }
+}
+
+function installDev(...args){
+  console.log(`yarn add ${args.join(' ')} --dev`);
+  if (hasYarn) {
+    shell.exec(`yarn add ${args.join(' ')} --dev`);
+  } else {
+    shell.exec(`npm install ${args.join(' ')} --save-dev`);
   }
 }
