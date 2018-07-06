@@ -54,11 +54,16 @@ function create(dir){
 
   console.log(chalk.yellow(`开始在 ${dir} 安装最新的 crude-docs\n`));
 
-  const packageJSON = { scripts: {
-    start: 'crude start',
-    build: 'crude build',
-    preview: 'crude preview',
-  } };
+  const packageJSON = {
+    "name": path.format(dir),
+    "description": `A doc for ${path.format(dir)}`,
+    scripts: {
+      start: 'crude start',
+      build: 'crude build',
+      preview: 'crude preview',
+    },
+
+  };
 
   fse.writeFileSync(
     path.resolve(CWD, dir, 'package.json'),
@@ -66,7 +71,8 @@ function create(dir){
   );
 
   shell.cd(dir);
-  installDev('serve');
+  // 安装 crude-docs
+  installDev('crude-docs');
 
   try{
 
@@ -84,7 +90,6 @@ function create(dir){
 }
 
 function installDev(...args){
-  console.log(`yarn add ${args.join(' ')} --dev`);
   if (hasYarn) {
     shell.exec(`yarn add ${args.join(' ')} --dev`);
   } else {

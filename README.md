@@ -19,4 +19,4 @@ cd my-docs
 
 在上面示例中: `my-docs` 便是你要创建的项目名称, 当然, 您可更改为任何其他的名字.
 
-去 [crude-docs]() 查看更多内容.
+去 [crude-docs](https://www.npmjs.com/package/crude-docs) 查看更多内容.
