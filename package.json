@@ -8,19 +8,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/flowke/crude-docs-init.git"
+    "url": "https://github.com/flowke/crude-docs-init.git"
   },
   "keywords": [
     "documentation",
     "docs init",
-    "crude docs"
+    "crude docs",
+    "crude-docs-init"
   ],
   "author": "Flowke",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/flowke/crude-docs-init/issues"
   },
-  "homepage": "https://github.com/flowke/crude-docs-init#readme",
+  "homepage": "https://github.com/flowke/crude-docs-init",
   "dependencies": {
     "chalk": "^2.4.1",
     "commander": "^2.16.0",
