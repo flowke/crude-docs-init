@@ -55,8 +55,8 @@ function create(dir){
   console.log(chalk.yellow(`开始在 ${dir} 安装最新的 crude-docs\n`));
 
   const packageJSON = {
-    "name": path.format(dir),
-    "description": `A doc for ${path.format(dir)}`,
+    "name": path.format(dir).name,
+    "description": `A doc for ${path.format(dir).name}`,
     scripts: {
       start: 'crude start',
       build: 'crude build',
